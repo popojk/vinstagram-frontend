@@ -21,6 +21,7 @@
 .post__headerAuthor > span {
   color: grey;
   font-size: 15px;
+  margin-left: 10px;
 }
 
 .post__image > img{
@@ -41,11 +42,39 @@
   justify-content: space-between;
 }
 
+.post__footerLikes:hover{
+  cursor: pointer;
+}
+
 .postIcon{
   padding: 7px;
   font-size: 30px;
 }
 
 .postIcon:hover{
+  cursor: pointer;
+}
+
+.avatar{
+  margin-right: 10px;
+}
+
+.post__footerMessage > span {
+  font-weight: bolder;
+  margin-right: 5px;
+}
+
+.readMore__button{
+  color:gray;
+  font-size: 15px;
+  background: 0;
+  border: 0;
+}
+
+.readMore__button:hover{
+  cursor: pointer;
+}
+
+.post__footerReply:hover{
   cursor: pointer;
 }

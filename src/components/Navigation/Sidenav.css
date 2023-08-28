@@ -1,5 +1,5 @@
 .sidenav{
-  position: fix;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -11,7 +11,12 @@
   margin: 15px;
 }
 
+.sidenav__logo:hover{
+  cursor: pointer;
+}
+
 .sidenav__buttons{
+  position: fixed;
   display: flex;
   flex-direction: column;
 }

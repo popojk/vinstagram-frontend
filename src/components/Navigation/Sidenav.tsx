@@ -4,16 +4,21 @@ import SearchIcon from '@mui/icons-material/Search';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import AddBoxOutlinedIcon from '@mui/icons-material/AddBoxOutlined';
 import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+import { Link } from 'react-router-dom';
 
 function Sidenav() {
   return (
     <div>
-      <img className="sidenav__logo" src="https://i.imgur.com/jWnHAAy.png" />
       <div className="sidenav__buttons">
+        <Link to='/main'>
+        <img className="sidenav__logo" src="https://i.imgur.com/jWnHAAy.png" />
+      </Link>
+        <Link to='/main'>
           <button className="sidenav__button">
             <HomeIcon />
           <span>首頁</span>
           </button>
+        </Link>
 
           <button className="sidenav__button">
             <SearchIcon />

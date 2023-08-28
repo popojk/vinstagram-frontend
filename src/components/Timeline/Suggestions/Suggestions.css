@@ -50,3 +50,7 @@
 .avatar {
   margin-right: 10px;
 }
+
+.post__footerReply {
+  color: gray;
+}
