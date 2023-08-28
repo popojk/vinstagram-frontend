@@ -1,10 +1,11 @@
 import './App.css';
-import Homepage from './pages/Homepage/Homepage';
+import Sidenav from "./components/Navigation/Sidenav";
+import { Link, Outlet, useLocation } from 'react-router-dom';
 
 function App() {
   return (
     <div className="app">
-      <Homepage />
+      <Outlet />
     </div>
   );
 }
