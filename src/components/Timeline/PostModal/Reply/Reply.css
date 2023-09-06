@@ -1,0 +1,48 @@
+.reply{
+  width: 390px;
+  margin-bottom: 4px;
+}
+
+.reply__left {
+  display: flex;
+  align-items: top;
+}
+
+.reply__info{
+  display: flex;
+  flex-direction: column;
+}
+
+.reply__username {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.likeIcon{
+  color: white;
+  background: 0;
+  margin-top: 20px;
+  height: 5px;
+  width: 5px;
+}
+
+.likeIcon:hover{
+  color: gray;
+  cursor: pointer;
+}
+
+.username{
+  font-weight: 600;
+  font-size: 14px;;
+}
+
+.message{
+  font-size: 5px;
+}
+
+.avatar {
+  font-size: 10px;;
+  margin-right: 10px;
+}

@@ -1,0 +1,33 @@
+.authentication{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.auth__more{
+  border: 1px solid gray;
+  padding: 20px;
+  margin-right: 30px;
+  margin-left: 30px;
+  text-align: center;
+  width: 231px;
+}
+
+.auth__more > span{
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.auth__more > span > button{
+  background: 0;
+  color: #0095f6;
+  font-weight: bolder;
+  border: 0;
+}
+
+.auth__more > span > button:hover{
+  cursor: pointer;
+}
+

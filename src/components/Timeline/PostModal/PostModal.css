@@ -1,0 +1,92 @@
+.postModal__box{
+  display: flex;
+  flex-direction: row;
+}
+
+.postModal__photo{
+  width: 50%;
+}
+
+.postModal__photo > img {
+  height: 100%;
+  width: 100%;
+}
+
+.postModal__right{
+  width: 50%;
+}
+
+.postModel__header{
+  height: 10%;
+  width: 400px;
+  border-bottom: 2px solid rgb(70, 70, 70);
+  padding-bottom: 6px;
+}
+
+.avatar {
+  margin: 4px;
+  margin-right: 8px;
+}
+
+.postModel__body{
+  height: 60%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+width: 6px;
+}
+
+::-webkit-scrollbar-track {
+box-shadow: inset 0 0 10px rgb(51, 51, 51);
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 10px;
+background: rgb(129, 129, 129); 
+box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+
+.postModal__message{
+  width: 390px;
+  padding: 4px;
+  margin-bottom: 10px;
+}
+
+.postModel__footer{
+  flex: 0.3;
+  border-top: 2px solid rgb(70, 70, 70);
+  
+  width: 400px;
+  padding-bottom: 6px;;
+}
+
+.postModel__footerIcons{
+display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.postModel__postIcon{
+  padding: 7px;
+  font-size: 30px;
+}
+
+.postModal__footerLikes {
+  padding-left: 4px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid rgb(70, 70, 70);
+}
+
+.postModel__postIcon:hover{
+  cursor: pointer;
+}
+
+.postModal__footerLikes:hover{
+  cursor: pointer;
+}

@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import App from './App';
+import Authentication from './authentication/Authentication';
 import Timeline from './components/Timeline/Timeline';
 import Homepage from './pages/Homepage/Homepage';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 
 const router = createBrowserRouter([
   {
@@ -11,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path:'',
+        path:'home',
         element: <Homepage />,
         children: [
           { path: 'main', element: <Timeline /> }
@@ -22,8 +25,8 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </Provider>
 );
 
