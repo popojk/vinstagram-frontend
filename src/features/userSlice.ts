@@ -5,8 +5,7 @@ import userService, { userData } from "./userService";
 const user = localStorage.getItem('user')
 
 const initialState = {
-  user: null,
-  token: null,
+  user: user ? user : null,
   isError: false,
   isSuccess: false,
   isLoading: false,

@@ -45,7 +45,7 @@ function Sidenav() {
         </button>
 
         <button className="sidenav__button">
-          <Avatar>A</Avatar>
+          <Avatar src={user.avatar} alt="" />
           <span>{user.username}
             <button onClick={handleLogout} className="logout__button">登出</button>
           </span>

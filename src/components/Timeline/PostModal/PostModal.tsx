@@ -11,6 +11,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import Input from '@mui/material/Input';
 import Reply from './Reply/Reply';
+import { PostInstance } from '../../../interface/post.interface';
 
 
 const style = {
@@ -26,15 +27,7 @@ const style = {
   p: 0,
 };
 
-interface PostModalProps {
-  postImage: string,
-  user: string
-  timestamp: string,
-  like: number,
-  message: string;
-}
-
-export default function PostModal({ postImage, user, timestamp, like, message }: PostModalProps) {
+export default function PostModal({ image, author, createdAt, likers, isLiked, text }: PostInstance) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -51,18 +44,18 @@ export default function PostModal({ postImage, user, timestamp, like, message }:
       >
         <Box sx={style} className='postModal__box'>
           <div className="postModal__photo">
-            <img src={postImage} alt='' />
+            <img src={image} alt='' />
           </div>
           <div className="postModel__right">
             <div className="postModel__header">
               <div className="post__headerAuthor">
-                <Avatar className='avatar'>{user.charAt(0)}</Avatar>
-                {user} • <span>{timestamp}</span>
+                <Avatar className='avatar' src={author.avatar} />
+                {author.name} • <span>{createdAt}</span>
               </div>
             </div>
             <div className="postModel__body">
               <div className="postModal__message">
-                {message}
+                {text}
               </div>
               <Reply />
               <Reply />
@@ -78,7 +71,7 @@ export default function PostModal({ postImage, user, timestamp, like, message }:
                 </div>
               </div>
               <div className="postModal__footerLikes">
-                {like}個讚
+                {likers.length}個讚
               </div>
               <div>
                 <Box
