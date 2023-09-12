@@ -40,7 +40,7 @@ interface PostModalProps extends PostInstance {
   handleReplySubmit: any
 }
 
-export default function PostModal({ _id, image, author, createdAt, likers, isLiked, text, replies, likesCount, likeStatus, setLikesCount, setLikeStatus, handlelike, reply, setReply, handleReplySubmit }: PostModalProps) {
+export default function CountPostModal({ _id, image, author, createdAt, likers, isLiked, text, replies, likesCount, likeStatus, setLikesCount, setLikeStatus, handlelike, reply, setReply, handleReplySubmit }: PostModalProps ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -48,7 +48,10 @@ export default function PostModal({ _id, image, author, createdAt, likers, isLik
   return (
     <span>
       {/* <Button onClick={handleOpen}>Open modal</Button> */}
-      <ChatBubbleOutlineIcon className="postIcon" onClick={handleOpen} />
+      <div className="post__footerReply" onClick={handleOpen}>
+        查看全部{replies.length}則留言
+      </div>
+      {/* <ChatBubbleOutlineIcon className="postIcon" onClick={handleOpen} */}
       <Modal
         open={open}
         onClose={handleClose}
@@ -71,9 +74,9 @@ export default function PostModal({ _id, image, author, createdAt, likers, isLik
                 {text}
               </div>
               {replies!.length > 0 && replies?.map((reply: ReplyInstance) => {
-                return <Reply post_id={_id} author={reply.author} text={reply.text} isLiked={reply.isLiked} _id={reply._id} />
+                return <Reply post_id={_id} author={reply.author} text={reply.text} isLiked={reply.isLiked} _id={reply._id}/>
               })}
-
+              
             </div>
             <div className="postModel__footer">
               <div className="postModel__footerIcons">
@@ -106,7 +109,7 @@ export default function PostModal({ _id, image, author, createdAt, likers, isLik
                   noValidate
                   autoComplete="off"
                 >
-                  <Input placeholder="留言"
+                  <Input placeholder="留言" 
                     onChange={(event: ChangeEvent<HTMLInputElement>) => setReply(event.target.value)}
                     value={reply}
                     onKeyPress={(event) => {

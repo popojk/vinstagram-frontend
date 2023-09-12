@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { Avatar } from "@mui/material";
 import { AppDispatch } from "../../app/store";
 import { logout } from '../../features/userSlice';
+import CreatePostModal from "./CreatePostModal";
+import { createPost } from "../../api/post";
 
 function Sidenav() {
   const user = useSelector((state: any) => state.data.user.user);
@@ -16,6 +18,7 @@ function Sidenav() {
   const handleLogout = () => {
     dispatch(logout())
   }
+
   return (
     <div>
       <div className="sidenav__buttons">
@@ -39,10 +42,7 @@ function Sidenav() {
           <span>通知</span>
         </button>
 
-        <button className="sidenav__button">
-          <AddBoxOutlinedIcon />
-          <span>建立</span>
-        </button>
+        <CreatePostModal />
 
         <button className="sidenav__button">
           <Avatar src={user.avatar} alt="" />
@@ -50,6 +50,7 @@ function Sidenav() {
             <button onClick={handleLogout} className="logout__button">登出</button>
           </span>
         </button>
+        
 
 
       </div>

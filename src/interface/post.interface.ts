@@ -4,7 +4,7 @@ export interface Author {
   avatar: string
 }
 
-export interface Reply {
+export interface ReplyInstance {
   _id?: string,
   author: Author,
   text: string,
@@ -18,7 +18,7 @@ export interface PostInstance {
   text?: string,
   image?: string,
   likers?: Author[],
-  replies?: Reply[],
+  replies?: ReplyInstance[],
   createdAt?: string
   isLiked?: boolean
   setShowModal?: any

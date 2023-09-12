@@ -1,0 +1,52 @@
+.createPost__body{
+  display: flex;
+  flex-direction: row;
+}
+
+.createPost__header {
+  border-bottom: 2px solid rgb(70, 70, 70);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.publish__button {
+  color: #0095f6;
+  font-weight: bold;
+  background: 0;
+  border: 0;
+}
+
+.publish__button:hover{
+  color: white;
+  cursor: pointer;
+}
+
+.createPost__header span{
+  margin-left: 45%;
+}
+
+.createPost__header button{
+  margin-left: 38%;
+}
+
+.createPostModal__photo {
+  width: 65%;
+}
+
+.createPostModal__photoDistribute > img {
+  width: 100%;
+  height: 375px;
+  margin-top: 5px;
+}
+
+.createPostModel__right > textarea {
+  margin-top: 5px;
+  width: 97%;
+  height: 370px;
+  background-color: #111111;
+  color: rgb(131, 131, 131);
+}
+
+.createPostModel__right {
+  width: 35%;
+}

@@ -85,8 +85,10 @@ display: flex;
 
 .postModel__postIcon:hover{
   cursor: pointer;
+  color: gray;
 }
 
 .postModal__footerLikes:hover{
   cursor: pointer;
+  color: gray;
 }
