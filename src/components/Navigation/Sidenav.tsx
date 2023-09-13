@@ -8,12 +8,12 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
 import { Avatar } from "@mui/material";
 import { AppDispatch } from "../../app/store";
-import { logout } from '../../features/userSlice';
+import { logout } from '../../features/authSlice';
 import CreatePostModal from "./CreatePostModal";
 import { createPost } from "../../api/post";
 
 function Sidenav() {
-  const user = useSelector((state: any) => state.data.user.user);
+  const user = useSelector((state: any) => state.data.auth.user);
   const dispatch = useDispatch<AppDispatch>();
   const handleLogout = () => {
     dispatch(logout())

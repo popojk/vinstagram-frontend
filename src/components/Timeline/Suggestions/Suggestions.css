@@ -11,6 +11,7 @@
 .username__left {
   display: flex;
   align-items: center;
+  width: 200px;
 }
 
 .username__info{
@@ -20,13 +21,13 @@
 
 .relation{
   color: gray;
-  font-size: 12;
+  font-size: 14px;
 }
 
 .suggestion__username {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   margin-top: 15px;
 }
 

@@ -12,24 +12,6 @@ import { getAllPosts } from "../../features/postSlice";
 function Timeline() {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
-  
-  /* useEffect(() => {
-    async function fetchPostsData() {
-      try {
-        const res = await getPosts();
-        if (res.status === 200) {
-          setPosts(res.data.data.findPosts);
-        }
-      } catch (error) {
-        if (isAxiosError(error)) {
-          console.error(error);
-        } else {
-          console.error(error);
-        }
-      }
-    }
-    fetchPostsData();
-  }, []) */
   const posts: any = useSelector((state: any) => state.data.post.posts)
 
   useEffect(() => {

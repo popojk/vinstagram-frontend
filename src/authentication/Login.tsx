@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './Login.css'
 import { useDispatch, useSelector } from "react-redux";
-import { login } from '../features/userSlice';
-import { userData } from '../features/userService';
+import { login } from '../features/authSlice';
+import { userData } from '../features/authService';
 import { AppDispatch } from '../app/store';
 
 function Login() {

@@ -6,6 +6,9 @@ import { useState } from 'react';
 import { pink } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { likeReply, unlikeReply } from '../../../../api/post';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../../app/store';
+import { getAllPosts } from '../../../../features/postSlice';
 
 type ReplyProps = {
   _id: string,
@@ -17,13 +20,16 @@ type ReplyProps = {
 
 function Reply({ _id, author, text, isLiked, post_id }: ReplyProps) {
   const [likeStatus, setLikeStatus] = useState(isLiked)
+  const dispatch = useDispatch<AppDispatch>();
 
   async function handlelike(_id?: string) {
     if (likeStatus) {
       await unlikeReply(post_id, _id);
+      await dispatch(getAllPosts())
       setLikeStatus(false);
     } else {
       await likeReply(post_id, _id);
+      await dispatch(getAllPosts())
       setLikeStatus(true);
     }
   }

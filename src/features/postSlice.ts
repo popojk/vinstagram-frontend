@@ -37,7 +37,6 @@ export const postSlice = createSlice({
       state.isLoading = true;
     })
       .addCase(getAllPosts.fulfilled, (state, action) => {
-        console.log(action.payload.data.findPosts)
         state.isLoading = false;
         state.isSuccess = true;
         state.posts = action.payload.data.findPosts;

@@ -1,32 +1,24 @@
-import { createAsyncThunk, createSlice, PayloadAction} from "@reduxjs/toolkit";
-import userService, { userData } from "./userService";
-
-//Get user from local storage
-const user = localStorage.getItem('user')
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import userService from "./userService";
 
 const initialState = {
-  user: user ? user : null,
+  users: null,
   isError: false,
   isSuccess: false,
   isLoading: false,
   message: ''
 }
 
-//Login user
-export const login = createAsyncThunk('auth/login', async (user: userData, thunkAPI): Promise<any> => {
+// get recommendation friend list
+export const getRecommendation = createAsyncThunk('user/getRecommendation', async (_, thunkAPI): Promise<any> => {
   try {
-    return await userService.login(user);
+    return await userService.getRecommendation();
   } catch (error) {
     const message = (error.response
       && error.response.data)
       || error.message || error.toString();
     return thunkAPI.rejectWithValue(message);
   }
-})
-
-//Logout user
-export const logout = createAsyncThunk('auth/logout', async () => {
-  await userService.logout();
 })
 
 export const userSlice = createSlice({
@@ -41,22 +33,19 @@ export const userSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(login.pending, (state) => {
+    builder.addCase(getRecommendation.pending, (state) => {
       state.isLoading = true;
     })
-      .addCase(login.fulfilled, (state, action) => {
+      .addCase(getRecommendation.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.user = action.payload;
+        state.users = action.payload.data.data.recommendUsers;
       })
-      .addCase(login.rejected, (state, action) => {
+      .addCase(getRecommendation.rejected, (state, action) => {
         state.isLoading = false;
         state.isError = true;
         state.message = action.payload as string;
-        state.user = null;
-      })
-      .addCase(logout.fulfilled, (state) => {
-        state.user = null;
+        state.users = null;
       })
   }
 })

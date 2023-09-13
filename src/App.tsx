@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import Authentication from './authentication/Authentication';
 
 function App() {
-  const user = useSelector((state: any) => state.data.user.user)
+  const user = useSelector((state: any) => state.data.auth.user)
   return (
       <div className="app">
         { user ? <Outlet /> : <Authentication /> }

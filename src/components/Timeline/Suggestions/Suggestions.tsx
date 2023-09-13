@@ -1,69 +1,46 @@
 import "./Suggestions.css";
 import { Avatar } from "@mui/material";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../app/store";
+import { getRecommendation } from "../../../features/userSlice";
+import { isAxiosError } from "axios";
+import Suggestion from "./Suggestion";
+
+type Recommendation = {
+  _id: string,
+  avatar: string,
+  name: string
+}
 
 function Suggestions() {
+  const recommendations: any = useSelector((state: any) => state.data.user.users)
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    async function fetchRecommendationData() {
+      try {
+        await dispatch(getRecommendation())
+      } catch (error) {
+        if (isAxiosError(error)) {
+          console.error(error);
+        } else {
+          console.error(error);
+        }
+      }
+    }
+    fetchRecommendationData();
+  }, [])
+
   return (
     <div className="suggestions">
       <div className="suggestions__title">
         為你推薦
       </div>
 
-      <div className="suggestions__usernames">
-        <div className="suggestion__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">calexwu</span>
-              <span className="relation">新用戶</span>
-            </div>
-          </div>
-          <button className="follow__button">追蹤</button>
-        </div>
-      </div>
-      <div className="suggestions__usernames">
-        <div className="suggestion__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">calexwu</span>
-              <span className="relation">新用戶</span>
-            </div>
-          </div>
-          <button className="follow__button">追蹤</button>
-        </div>
-      </div>
-      <div className="suggestions__usernames">
-        <div className="suggestion__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">calexwu</span>
-              <span className="relation">新用戶</span>
-            </div>
-          </div>
-          <button className="follow__button">追蹤</button>
-        </div>
-      </div>
-      <div className="suggestions__usernames">
-        <div className="suggestion__username">
-          <div className="username__left">
-            <span className="avatar">
-              <Avatar>R</Avatar>
-            </span>
-            <div className="username__info">
-              <span className="username">calexwu</span>
-              <span className="relation">新用戶</span>
-            </div>
-          </div>
-          <button className="follow__button">追蹤</button>
-        </div>
-      </div>
+      {recommendations && recommendations.map((recommendation: Recommendation) => {
+        return <Suggestion _id={recommendation._id} avatar={recommendation.avatar} name={recommendation.name}/>
+      })}     
     </div>
   )
 }
