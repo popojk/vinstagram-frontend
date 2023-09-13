@@ -13,14 +13,15 @@ import CreatePostModal from "./CreatePostModal";
 import { createPost } from "../../api/post";
 
 function Sidenav() {
-  const user = useSelector((state: any) => state.data.auth.user);
+  const user = useSelector((state: any) => JSON.parse(state.data.auth.user));
+  console.log(user)
   const dispatch = useDispatch<AppDispatch>();
   const handleLogout = () => {
     dispatch(logout())
   }
 
   return (
-    <div>
+    <div className="sidenav">
       <div className="sidenav__buttons">
         <Link to='/home/main'>
           <img className="sidenav__logo" src="https://i.imgur.com/jWnHAAy.png" />
@@ -50,9 +51,6 @@ function Sidenav() {
             <button onClick={handleLogout} className="logout__button">登出</button>
           </span>
         </button>
-        
-
-
       </div>
       <div className="sidenav__more">
         <button className="sidenav__button">

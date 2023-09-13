@@ -88,7 +88,7 @@ function Post({ _id, author, image, likers, text, replies, createdAt, isLiked, s
             sx={{
               '& > :not(style)': {
                 mt: 1,
-                ml: 0,
+                ml: 0.4,
                 width: '59ch',
                 input: { color: 'white' },
                 label: { color: 'gray' },

@@ -4,6 +4,7 @@
 }
 
 .timeline__left{
+  padding-left: 20%;
   flex: 0.7;
 }
 

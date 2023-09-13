@@ -4,9 +4,10 @@
 }
 
 .homepage__nav{
-  flex: 0.2;
+  flex: 0.15;
+  border-right: 2px solid rgb(70, 70, 70);
 }
 
 .homepage__timeline{
-  flex: 0.8;
+  flex: 0.85;
 }

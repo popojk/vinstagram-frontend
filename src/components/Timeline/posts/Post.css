@@ -39,13 +39,17 @@
   justify-content: space-between;
 }
 
+.post__footerLikes{
+  margin-left: 5px;
+}
+
 .post__footerLikes:hover{
   cursor: pointer;
   color: gray;
 }
 
 .postIcon{
-  padding: 7px;
+  padding: 5px;
   font-size: 30px;
 }
 
@@ -56,6 +60,10 @@
 
 .avatar{
   margin-right: 10px;
+}
+
+.post__footerMessage {
+  margin-left: 5px;
 }
 
 .post__footerMessage > span {
