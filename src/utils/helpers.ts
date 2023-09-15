@@ -1,6 +1,6 @@
 import axios, { isAxiosError } from 'axios';
 
-const baseURL = 'http://localhost:8080';
+const baseURL = 'http://vinstagram.ap-northeast-2.elasticbeanstalk.com/api';
 
 const instance = axios.create({
   baseURL,

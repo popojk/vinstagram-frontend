@@ -1,4 +1,13 @@
 import apiHelper from '../utils/helpers';
+import axios from "axios";
+
+async function createUser(formData: FormData) {
+  try {
+    const response = await axios.post(`http://vinstagram.ap-northeast-2.elasticbeanstalk.com/api/users`, formData)
+  } catch(error){
+    console.log(error)
+  }
+}
 
 async function getRecommendUsers() {
   return apiHelper.post('graphql', {
@@ -33,5 +42,6 @@ async function followUser(userId: string) {
 
 export {
   getRecommendUsers,
-  followUser
+  followUser,
+  createUser
 }

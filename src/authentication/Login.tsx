@@ -8,7 +8,6 @@ import { AppDispatch } from '../app/store';
 function Login() {
   const [ username, setUsername ] = useState('');
   const [ password, setPassword ] = useState('');
-  //const dispatch = useDispatch()
   const dispatch = useDispatch<AppDispatch>();
   const handleLogin = () => {
     const data = {

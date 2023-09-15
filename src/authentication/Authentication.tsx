@@ -10,7 +10,7 @@ function Authentication() {
   }
   return (
     <div className='authentication'>
-        {active === 'login' ? <Login /> : <Signup />}
+        {active === 'login' ? <Login /> : <Signup setActive={setActive} />}
         <div className="auth__more">
           <span>
           {active === "login" ? (<> Don't have an account? <button onClick={handleChange}>Sign up</button></>)

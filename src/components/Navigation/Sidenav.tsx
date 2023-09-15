@@ -13,12 +13,12 @@ import CreatePostModal from "./CreatePostModal";
 import { createPost } from "../../api/post";
 
 function Sidenav() {
-  const user = useSelector((state: any) => JSON.parse(state.data.auth.user));
-  console.log(user)
+  const user = useSelector((state: any) => state.data.auth.user);
   const dispatch = useDispatch<AppDispatch>();
   const handleLogout = () => {
     dispatch(logout())
   }
+  console.log(user.name)
 
   return (
     <div className="sidenav">
@@ -33,7 +33,7 @@ function Sidenav() {
           </button>
         </Link>
 
-        <button className="sidenav__button">
+        {/* <button className="sidenav__button">
           <SearchIcon />
           <span>搜尋</span>
         </button>
@@ -41,7 +41,7 @@ function Sidenav() {
         <button className="sidenav__button">
           <FavoriteBorderIcon />
           <span>通知</span>
-        </button>
+  </button> */}
 
         <CreatePostModal />
 
@@ -52,12 +52,12 @@ function Sidenav() {
           </span>
         </button>
       </div>
-      <div className="sidenav__more">
+      {/* <div className="sidenav__more">
         <button className="sidenav__button">
           <MenuOutlinedIcon />
           <span>更多</span>
         </button>
-      </div>
+</div> */}
     </div>
   )
 }

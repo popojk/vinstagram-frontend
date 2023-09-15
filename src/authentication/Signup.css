@@ -5,13 +5,25 @@
   padding: 50px;
   margin-left: 30px;
   margin-right: 30px;
+  width: 170px;
 }
 
-.signup > img {
-  width: 100px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px;
+.signup__photo{
+  align-items: center;
+}
+
+.avatar__image {
+  border-radius: 100%;
+  margin-left: 10px;
+  width: 160px;
+}
+
+.photo__input {
+  margin-left: 6px;
+}
+
+.signup__photoUploadButtons {
+  margin-bottom: 10px;
 }
 
 .signup > input {

@@ -9,7 +9,7 @@ export type userData = {
 
 //signin user
 const login = async (userData: userData): Promise<any> => {
-  const response = await axios.post(`http://localhost:8080/auth/signin`, userData)
+  const response = await axios.post(`http://vinstagram.ap-northeast-2.elasticbeanstalk.com/api/auth/signin`, userData)
   if (response.data) {
     localStorage.setItem('user', JSON.stringify(response.data));
   }
