@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+## Vinstagram
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Vinstagram是一個由Instagram發想的社群平台，提供用戶註冊登入後瀏覽、發佈貼文，也可以對貼文按讚、留言，也可以追蹤其他使用者，而本Repo是前端網頁，使用React打造
 
-## Available Scripts
+## 網站連結
+[網站連結] (http://vinstagram.ap-northeast-2.elasticbeanstalk.com/home/main)
+[後端Repo] (https://github.com/popojk/vinstagram-api)
 
-In the project directory, you can run:
+## 網站介紹
+登入頁面
+![登入頁面](src/images/login.png)
+註冊頁面
+![註冊頁面](src/images/signup.png)
+主頁面
+![主頁面](src/images/main.png)
+建立貼文
+![建立貼文](src/images/createpost.png)
 
-### `npm start`
+## 在本地運行專案
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+打開 terminal，將本專案 clone 至本地
+```
+git clone https://github.com/popojk/vinstagram-frontend
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+下載套件
+```
+npm install
+```
 
-### `npm test`
+啟動專案
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 使用技術
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| 技術                | 用途                |
+| ------------------ | ------------------- |
+|React               |前端框架              |
+|Redux               |狀態管理              |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
